@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-box p-3 m-2">
+  <a class="navbar-brand" href="#">TravelPro</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Packages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Destinations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      
+    </ul>
+  
+  </div>
+
+  <div>
+    <a [routerLink]="[{ outlets: { modal: ['login'] } }]">
+        <button type="button" class="btn btn-outline-primary m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Login
+        </button>
+    </a>
+    <div class="modal"  id="exampleModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+              <label class="btn btn-outline-primary" for="btnradio1" (click)="navigateTo('login')">Login</label>
+            
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio2" (click)="navigateTo('signup')">Signup</label>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div> 
+          <div class="modal-body">
+            <router-outlet name="modal"></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary">Agent Login</button>
+  </div>
+</nav>
